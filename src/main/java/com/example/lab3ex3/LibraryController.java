@@ -9,16 +9,12 @@ import java.util.List;
 @RestController
 public class LibraryController
 {
-    private final LibraryService libraryService;
+    private LibraryService libraryService;
 
     @Autowired
-    public LibraryController(LibraryService libraryService) {
+    public void getLibraryController(LibraryService libraryService) {
         this.libraryService = libraryService;
     }
-
-//    public LibraryController(LibraryService libraryService) {
-//        this.libraryService = libraryService;
-//    }
 
     @GetMapping("/library")
     public List<Book> getLibrary()
